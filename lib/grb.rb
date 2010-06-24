@@ -111,7 +111,7 @@ class Grb
   end
 
   def self.get_current_branch
-    (`#{GIT} branch 2> /dev/null | grep '^\*'`).gsub(/\W/,'')
+    (`#{GIT} branch 2>&1`).gsub(/[^*]*\*[ ]*([\w-]*).*|.*/m, '\1')
   end
 
   def self.local_branches
