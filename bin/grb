@@ -12,6 +12,11 @@ else
   def debugger;end
 end
 
+begin
+  require 'rubygems'
+  require 'win32console'
+rescue LoadError; end
+
 require "version"
 require "grb"
 
